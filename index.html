@@ -7,7 +7,8 @@
     <style>
         body {
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #ffd1dc 0%, #fff 100%);
+            background: url('./20250119_141623.png') no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -17,7 +18,7 @@
             justify-content: flex-start;
         }
         .container {
-            background: #fff;
+            background: rgba(255, 255, 255, 1);
             margin-top: 20px;
             padding: 32px 32px 32px 32px;
             border-radius: 18px;
@@ -26,7 +27,7 @@
             width: 100%;
             text-align: center;
             border: 2px solid #ffd1dc;
-            animation: fadeIn 2s ease-in-out;
+            animation: fadeIn 3s ease-in-out;
         }
         .welcome {
             font-size: 1.5rem;
@@ -143,6 +144,39 @@
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 15px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -158,7 +192,11 @@
         </div>
         <div class="photo">
             <!-- Replace the src with your actual photo URL -->
-            <img src="./20250119_141623.png" alt="Saraniya & Abhi">
+            <img src="./20250119_141623.png" alt="Saraniya & Abhi" onclick="openModal()">
+        </div>
+        <div id="myModal" class="modal" onclick="closeModal()">
+            
+            <img class="modal-content" id="img01">
         </div>
         <div class="countdown" id="countdown">Loading countdown...</div>
         <div class="venue">
@@ -192,17 +230,24 @@
         updateCountdown();
 
         function addToCalendar() {
-            // const title = encodeURIComponent('Wedding: Saraniya S & Abhi S Raj');
-            // const details = encodeURIComponent('Join us for our wedding!\nVenue: https://maps.app.goo.gl/gAbiszSLbimUPh6x6');
-            // const location = encodeURIComponent('https://maps.app.goo.gl/gAbiszSLbimUPh6x6');
-            // const start = '20240815T043000Z'; // 10:00 AM IST in UTC
-            // const end = '20240815T073000Z';   // 1:00 PM IST in UTC
-            // const reminder1 = '20240814T043000Z'; // 10:00 AM IST in UTC, a day before
-            // const reminder2 = '20240815T033000Z'; // 9:00 AM IST in UTC, on the day
-            // const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}&sf=true&output=xml&recur=RRULE:FREQ=ONCE&reminders=popup,1440&reminders=popup,60`;
+            const title = encodeURIComponent('Wedding: Saraniya S & Abhi S Raj');
+            const details = encodeURIComponent('Join us for our wedding!\nVenue: https://maps.app.goo.gl/gAbiszSLbimUPh6x6');
+            const location = encodeURIComponent('https://maps.app.goo.gl/gAbiszSLbimUPh6x6');
+            const start = '20240815T043000Z'; // 10:00 AM IST in UTC
+            const end = '20240815T073000Z';   // 1:00 PM IST in UTC
+            const reminder1 = '20240814T043000Z'; // 10:00 AM IST in UTC, a day before
+            const reminder2 = '20240815T033000Z'; // 9:00 AM IST in UTC, on the day
+            const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}&sf=true&output=xml&recur=RRULE:FREQ=ONCE&reminders=popup,1440&reminders=popup,60`;
             // const url = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWY0MThjOGJ1YzhpMGdoZWNnaWkxdTI3bWUgbWFpbC5hYmhpc3JhakBt&tmsrc=mail.abhisraj%40gmail.com`
-            const url=`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGthb3M2aGVtdWZzcGk5bXRtOWIxcG9jbG0gbWFpbC5hYmhpc3JhakBt&tmsrc=mail.abhisraj%40gmail.com`
+            // const url=`https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGthb3M2aGVtdWZzcGk5bXRtOWIxcG9jbG0gbWFpbC5hYmhpc3JhakBt&tmsrc=mail.abhisraj%40gmail.com`
             window.open(url, '_blank');
+        }
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+            document.getElementById('img01').src = "./20250119_141623.png";
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
         }
     </script>
 </body>
