@@ -81,6 +81,8 @@
             box-shadow: 0 2px 12px rgba(215,38,96,0.08);
         }
         .map {
+            /* border-radius: 50%; */
+            border: 4px solid #ffd1dc;
             margin: 18px 0;
         }
         .map iframe {
@@ -186,7 +188,8 @@
             const end = '20240815T073000Z';   // 1:00 PM IST in UTC
             const reminder1 = '20240814T043000Z'; // 10:00 AM IST in UTC, a day before
             const reminder2 = '20240815T033000Z'; // 9:00 AM IST in UTC, on the day
-            const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}&sf=true&output=xml&recur=RRULE:FREQ=ONCE&reminders=popup,1440&reminders=popup,60`;
+            // const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}&sf=true&output=xml&recur=RRULE:FREQ=ONCE&reminders=popup,1440&reminders=popup,60`;
+            const url = `https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWY0MThjOGJ1YzhpMGdoZWNnaWkxdTI3bWUgbWFpbC5hYmhpc3JhakBt&tmsrc=mail.abhisraj%40gmail.com`
             window.open(url, '_blank');
         }
     </script>
