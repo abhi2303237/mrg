@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,22 +56,15 @@
             justify-content: center;
             text-align: center;
             color: white;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('we.jpg') no-repeat center center/cover;
-            filter: brightness(0.6);
-            z-index: -1;
+            background: url('photos/close-up.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
         }
 
         .hero-content {
             animation: fadeIn 2s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 10px;
         }
 
         .hero h1 {
@@ -89,6 +84,11 @@
         .section {
             padding: 4rem 2rem;
             text-align: center;
+            background-color: #fff;
+        }
+        
+        .section.dark {
+            background-color: #f0e8e0;
         }
 
         .section h2 {
@@ -96,10 +96,6 @@
             font-size: 3.5rem;
             margin-bottom: 2rem;
             color: #c59d5f;
-        }
-
-        .couple-section {
-            background-color: #fff;
         }
 
         .couple-container {
@@ -132,10 +128,6 @@
             font-size: 2.5rem;
             margin-top: 1rem;
             color: #4a4a4a;
-        }
-
-        .event-details {
-            background-color: #f0e8e0;
         }
 
         .event-info {
@@ -174,6 +166,14 @@
             background-color: #a57d4f;
         }
 
+        .parallax-section {
+            height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         footer {
             background-color: #4a4a4a;
             color: white;
@@ -204,7 +204,8 @@
                 align-items: center;
                 gap: 1rem;
             }
-        }
+            
+            }
     </style>
 </head>
 <body>
@@ -217,18 +218,20 @@
     </header>
 
     <main>
-        <section class="section couple-section">
+        <section class="section">
             <h2>With Joyful Hearts</h2>
             <div class="couple-container">
                 <div class="couple">
-                    <img src="we.jpg" alt="Saraniya & Abhi">
+                    <img src="photos/thumbnail.png" alt="Saraniya & Abhi">
                     <h3>Saraniya S & Abhi S Raj</h3>
                 </div>
             </div>
             <p style="max-width: 600px; margin: 2rem auto;">Join us as we celebrate our love and begin our new journey together. Your presence is the greatest gift of all.</p>
         </section>
 
-        <section class="section event-details">
+        <div class="parallax-section" style="background-image: url('photos/second.jpg');"></div>
+
+        <section class="section dark">
             <h2>Event Details</h2>
             <div class="event-info">
                 <p><strong>Date:</strong> August 17, 2025</p>
@@ -241,6 +244,27 @@
                 </div>
             </div>
         </section>
+
+        <div class="parallax-section" style="background-image: url('photos/first.jpg');"></div>
+
+        <section class="section">
+            <h2>A Glimpse into Our Story</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+                Our journey has been filled with laughter, adventure, and so much love. We can't wait to start this new chapter of our lives together, and we're so excited to share our special day with you. Thank you for being a part of our story.
+            </p>
+        </section>
+
+        <div class="parallax-section" style="background-image: url('photos/best.jpg');"></div>
+
+        <section class="section dark">
+            <h2>Join Us in Celebration</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8;">
+                Your presence at our wedding is the most precious gift we could ask for. We look forward to celebrating with you!
+            </p>
+        </section>
+
+        <!-- <div class="parallax-section" style="background-image: url('photos/1716769420073~2.jpg');"></div> -->
+
     </main>
 
     <footer>
