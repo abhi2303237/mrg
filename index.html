@@ -63,6 +63,11 @@
             width: auto;
         }
 
+        body.iphone .hero,
+        body.iphone .parallax-section {
+            background-attachment: scroll;
+        }
+
         .hero-content {
             animation: fadeIn 2s ease-in-out;
             background-color: rgba(0, 0, 0, 0.5);
@@ -305,6 +310,12 @@
             const end = '20250817T060000Z';   // 11:30 AM IST in UTC
             const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}&sf=true&output=xml`;
             window.open(url, '_blank');
+        }
+    </script>
+
+    <script>
+        if (/iPhone/.test(navigator.userAgent)) {
+            document.body.classList.add('iphone');
         }
     </script>
 
